@@ -57,3 +57,29 @@ class MyStack:
             return "Stack is empty"
     def empty(self) -> bool:
         return len(self.items)== 0
+
+######################################################################## Optimal Solution #################################################################################        
+from queue import Queue
+class MyStack:
+
+    def __init__(self):
+        self.q=Queue()
+
+    def push(self, x: int) -> None:
+        s=self.q.qsize()
+        self.q.put(x)
+        for _ in range(s):
+            self.q.put(self.q.get())
+
+    def pop(self) -> int:
+        if not self.empty():
+            return self.q.get()
+        else:
+            return "Stack is empty"
+    def top(self) -> int:
+        if not self.empty():
+            return self.q.queue[0]
+        else:
+            return "Stack is empty"
+    def empty(self) -> bool:
+        return self.q.qsize()== 0
