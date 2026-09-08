@@ -18,10 +18,7 @@ class MinStack:
     def pop(self) -> None:
         if self.stack[-1]==self.minstack[-1]:
             self.minstack.pop()
-            if self.minstack: 
-                self.value=self.minstack[-1]
-          
-                
+               
         self.stack.pop()
         
 
