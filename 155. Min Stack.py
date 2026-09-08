@@ -1,0 +1,43 @@
+link-https://leetcode.com/problems/min-stack/description/
+code:
+class MinStack:
+
+    def __init__(self):
+        self.stack=[]
+        self.minstack=[]
+        
+
+    def push(self, value: int) -> None:
+    
+        if not self.minstack or value <= self.minstack[-1]:
+            self.minstack.append(value)
+
+        self.stack.append(value)
+        
+
+    def pop(self) -> None:
+        if self.stack[-1]==self.minstack[-1]:
+            self.minstack.pop()
+            if self.minstack: 
+                self.value=self.minstack[-1]
+          
+                
+        self.stack.pop()
+        
+
+    def top(self) -> int:
+        return self.stack[-1]
+        
+
+    def getMin(self) -> int:
+        
+        return self.minstack[-1]
+        
+
+
+# Your MinStack object will be instantiated and called as such:
+# obj = MinStack()
+# obj.push(value)
+# obj.pop()
+# param_3 = obj.top()
+# param_4 = obj.getMin()
