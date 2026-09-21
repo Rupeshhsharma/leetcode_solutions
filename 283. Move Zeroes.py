@@ -1,0 +1,20 @@
+link- https://leetcode.com/problems/move-zeroes/description/?envType=problem-list-v2&envId=array
+code:
+class Solution:
+    def moveZeroes(self, nums: list[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        left = 0
+
+        for right in range(len(nums)):
+            if nums[right] != 0:
+                nums[right], nums[left] = nums[left], nums[right]
+                left += 1
+        
+        return nums
+
+
+
+
+        
