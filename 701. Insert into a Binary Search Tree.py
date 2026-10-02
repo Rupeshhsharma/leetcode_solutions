@@ -1,4 +1,4 @@
-[701. Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/description/)
+link: https://leetcode.com/problems/insert-into-a-binary-search-tree/description/
 
 ### Code
 # Definition for a binary tree node.
